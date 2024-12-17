@@ -1,5 +1,5 @@
 <div align="center">
-    <img src='./public/laramail-red.jpg' alt='image'>
+    <img style='border-radius: 50%; width: 150px;' src='./public/laramail-red.jpg' alt='image'>
   <h1 style="color: red;"> <\> Lara-Mail <\> </h1>
 </div>
 
