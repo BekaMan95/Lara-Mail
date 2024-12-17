@@ -71,11 +71,13 @@ Follow these steps to get the project running locally:
     Configure your environment variables in .env. Here’s an example for setting up email:
     ```php
     MAIL_MAILER=smtp
-    MAIL_HOST=smtp.mailtrap.io
-    MAIL_PORT=2525
-    MAIL_USERNAME=your_username
-    MAIL_PASSWORD=your_password
+    MAIL_HOST=smtp.gmail.com
+    MAIL_PORT=587
+    MAIL_USERNAME=youremailaddress@gmail.com
+    MAIL_PASSWORD=email.token
     MAIL_ENCRYPTION=tls
+    MAIL_FROM_ADDRESS="youremailaddress@gmail.com"
+    MAIL_FROM_NAME="${APP_NAME}"
 
     ```
 
