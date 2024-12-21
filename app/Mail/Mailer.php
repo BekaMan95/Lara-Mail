@@ -18,14 +18,14 @@ class Mailer extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(string $subject, string $message, ?string $contactAddress=null, ?string $logoUrl=null)
+    public function __construct(string $subject, string $message, ?string $contactAddress=null, ?string $attachmentPath=null)
     {
         //
         $this->appName = config('app.name');
         $this->subject = $subject;
         $this->message = $message;
         $this->contactAddress = $contactAddress;
-        $this->logoUrl = $logoUrl ?? 'laramail-red.jpg';
+        $this->attachmentPath = $attachmentPath;
     }
 
     /**
@@ -51,7 +51,6 @@ class Mailer extends Mailable
         return new Content(
             view: 'recieve.page',
             with: [
-                'logoUrl' => $this->logoUrl,
                 'appName' => $this->appName,
                 'subject' => $this->subject, // Passing data to the Blade view
                 'body' => $this->message,
@@ -67,6 +66,10 @@ class Mailer extends Mailable
      */
     public function attachments(): array
     {
+        if ($this->attachmentPath) {
+            return [ $this->attachmentPath ];
+        }
+        
         return [];
     }
 }

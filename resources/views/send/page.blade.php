@@ -32,7 +32,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-800 min-h-screen flex items-center justify-center text-white">
+<body class="bg-gradient-to-br from-red-500 to-gray-800 flex items-center justify-center min-h-screen text-white">
     <div class="bg-transparent shadow-md rounded-lg p-6 w-full max-w-lg">
         <!-- Pop-up -->
         @if(session('success'))
@@ -46,15 +46,16 @@
 
         <!-- Header -->
         <div class="flex flex-col items-center justify-center gap-5">
-            <img class="size-40 rounded-2xl" src="laramail-blue.jpg" alt="LaraMail Image">
-            <div class="bg-blue-500 text-white text-center py-4 px-24 rounded-md">
+            <img class="size-40 rounded-2xl" src="laramail-red.jpg" alt="LaraMail Image">
+            <div class="bg-red-500 text-white text-center py-4 px-24 rounded-md">
                 <h1 class="text-2xl font-bold">Welcome to {{config('app.name')}}</h1>
             </div>
         </div>
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Send Email</h2>
+        <br>
+        <h2 class="text-2xl font-semibold text-gray-100 mb-4">Send Email</h2>
 
         <!-- Form -->
-        <form action="{{ route('sendEmail') }}" method="POST" id="emailForm">
+        <form action="{{ route('sendEmail') }}" method="POST" enctype="multipart/form-data">
             @csrf
             
             <!-- Recipient Email -->
@@ -63,7 +64,7 @@
                 <input 
                     type="email" 
                     name="recipient" 
-                    class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
                     placeholder="Enter recipient's email"
                     required>
             </div>
@@ -74,7 +75,7 @@
                 <input 
                     type="text"
                     name="subject" 
-                    class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
                     placeholder="Enter email subject"
                     required>
             </div>
@@ -85,7 +86,7 @@
                 <textarea 
                     name="body" 
                     rows="6"
-                    class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
                     placeholder="Write your email content here..."
                     required></textarea>
             </div>
@@ -96,15 +97,25 @@
                 <input 
                     type="text" 
                     name="contact_info" 
-                    class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
                     placeholder="Enter your address (link) | Optional">
+            </div>
+
+            <!-- File Attachment -->
+            <div class="mb-4">
+                <label for="attachment" class="block text-gray-100 font-medium mb-2">Attachment</label>
+                <input 
+                    type="file" 
+                    name="attachment" 
+                    class="w-full bg-transparent border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                    accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.ppt,.pptx,.xls">
             </div>
 
             <!-- Submit Button -->
             <div class="flex justify-end">
                 <button 
                     type="submit" 
-                    class="bg-blue-500 text-white font-medium px-6 py-2 rounded-lg flex items-center justify-center hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="bg-red-500 text-white font-medium px-6 py-2 rounded-lg flex items-center justify-center hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
                     id="submitButton">
                     <span class="loading-spinner hidden" id="loadingSpinner"></span>
                     <span id="buttonText">Send Email</span>
