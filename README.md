@@ -21,6 +21,8 @@
 
 - **Customizable Email Templates**: Beautiful, professional email designs ready for use.
 
+- **File attachment**: supports file attachment up to 5MB to send docs, ppt, image and pdf.
+
 ---
 
 ## 💻 Test
@@ -38,6 +40,8 @@
         "contact_info": "sender address (links)"
     }
     ```
+    use form data if you want to attach files and use key "attachment" for the file.
+    **if you want to tryout file attachement:** try the 'dev' branch.
 
 ---
 
@@ -47,7 +51,7 @@ Follow these steps to get the project running locally:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/lara-mail.git lara-mail
+   git clone https://github.com/BekaMan95/lara-mail.git lara-mail
    ```
     ```bash
    cd lara-mail
@@ -61,6 +65,10 @@ Follow these steps to get the project running locally:
     install node dependencies,
     ```bash
     npm install
+    ```
+    create storage link,
+    ```bash
+    php artisan storage:link
     ```
 
 3. **Set up your environment**:
@@ -86,17 +94,16 @@ Follow these steps to get the project running locally:
     php artisan key:generate
     ```
 
-5. **Generate application key**:
-    ```bash
-    php artisan key:generate
-    ```
-
-6. **Build UI Components**:
+5. **Build UI Components**:
     ```bash
     npm run build
     ```
+    alternatively, if you just want a taste, use 'run dev' on separate terminal.
+    ```bash
+    npm run dev
+    ```
 
-7. **Start the development server**:
+6. **Start the development server**:
     ```bash
     php artisan serve
     ```
