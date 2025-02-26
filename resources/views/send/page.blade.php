@@ -32,7 +32,7 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-red-500 to-gray-800 flex items-center justify-center min-h-screen text-white">
+<body class="bg-gradient-to-r from-red-500/90 via-gray-800 to-gray-900 flex items-center justify-center min-h-screen text-white">
     <div class="bg-transparent shadow-md rounded-lg p-6 w-full max-w-lg">
         <!-- Pop-up -->
         @if(session('success'))
