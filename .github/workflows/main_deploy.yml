@@ -74,5 +74,6 @@ jobs:
         with:
           app-name: 'laramail'
           slot-name: 'production'
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
           package: .
           
