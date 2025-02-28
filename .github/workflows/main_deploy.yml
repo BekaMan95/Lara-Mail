@@ -62,7 +62,7 @@ jobs:
         run: unzip release.zip
       
       - name: Azure Login
-        uses: azure/login@v2.2.0
+        uses: azure/login@v2
         with:
           client-id: ${{ secrets.__clientidsecretname__ }}
           tenant-id: ${{ secrets.__tenantidsecretname__ }}
