@@ -33,6 +33,18 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm' # Optional: Caches node_modules
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project (Tailwind + JS)
+        run: npm run build  # <-- Ensures Tailwind is processed
+
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
 
