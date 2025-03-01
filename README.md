@@ -40,8 +40,7 @@
         "contact_info": "sender address (links)"
     }
     ```
-    use form data if you want to attach files and use key "attachment" for the file.
-    **if you want to tryout file attachement:** try the 'dev' branch.
+    **if you want to tryout file attachement:** attach files and use key "attachment" for the file.
 
 ---
 
