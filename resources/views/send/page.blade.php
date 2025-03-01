@@ -101,6 +101,16 @@
                     placeholder="Enter your address (link) | Optional">
             </div>
 
+            <!-- File Attachment -->
+            <div class="mb-4">
+                <label for="attachment" class="block text-gray-100 font-medium mb-2">Attachment</label>
+                <input 
+                    type="file" 
+                    name="attachment" 
+                    class="w-full bg-transparent border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                    accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.ppt,.pptx,.xls">
+            </div>
+
             <!-- Submit Button -->
             <div class="flex justify-end">
                 <button 
