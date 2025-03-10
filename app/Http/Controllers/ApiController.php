@@ -23,11 +23,12 @@ class ApiController extends Controller
         if ($request->hasFile('attachment')) {
             $attachmentPath = $request->file('attachment')->store('attachments', 'public');
         }
+
         // Send the email
-        Mail::to($request->recipient)->send(new Mailer($request->subject, $request->body, $request->contact_info, './storage/' . $attachmentPath));
-        
-        if ($attachmentPath && Storage::disk('public')->exists($attachmentPath)) {
-            Storage::disk('public')->delete($attachmentPath);
+        if ($attachmentPath) {
+            Mail::to($request->recipient)->send(new Mailer($request->subject, $request->body, $request->contact_info, './storage/' . $attachmentPath));
+        } else {
+            Mail::to($request->recipient)->send(new Mailer($request->subject, $request->body, $request->contact_info));
         }
 
         return response()->json([
