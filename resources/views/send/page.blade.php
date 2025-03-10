@@ -37,9 +37,18 @@
         <!-- Pop-up -->
         @if(session('success'))
             <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                <div class="bg-gray-800 p-6 rounded-lg shadow-md text-center">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md text-center max-w-lg">
                     <p class="text-gray-200 font-bold">{{ session('success') }}</p>
                     <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="closePopup()">Close</button>
+                </div>
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md text-center max-w-lg">
+                    <p class="text-gray-200 font-bold">{{ session('error') }}</p>
+                    <button class="mt-4 px-4 py-2 bg-red-500 text-white rounded" onclick="closePopup()">Close</button>
                 </div>
             </div>
         @endif
@@ -62,11 +71,11 @@
             <div class="mb-4">
                 <label for="recipient" class="block text-gray-100 font-medium mb-2">Recipient Email</label>
                 <input 
-                    type="email" 
+                    type="text" 
                     name="recipient" 
                     class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
                     placeholder="Enter recipient's email"
-                    required>
+                    >
             </div>
 
             <!-- Email Subject -->
@@ -77,7 +86,7 @@
                     name="subject" 
                     class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
                     placeholder="Enter email subject"
-                    required>
+                    >
             </div>
 
             <!-- Email Body -->
@@ -88,7 +97,7 @@
                     rows="6"
                     class="w-full border bg-transparent border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
                     placeholder="Write your email content here..."
-                    required></textarea>
+                    ></textarea>
             </div>
 
             <!-- Contact Info -->
@@ -108,7 +117,7 @@
                     type="file" 
                     name="attachment" 
                     class="w-full bg-transparent border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
-                    accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.ppt,.pptx,.xls">
+                    >
             </div>
 
             <!-- Submit Button -->
