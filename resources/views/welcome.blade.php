@@ -6,7 +6,7 @@
     <title>Welcome to {{config('app.name')}}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gradient-to-br from-red-500/90 via-gray-700 to-gray-900 flex items-center justify-center min-h-screen text-white">
+<body class="bg-gradient-to-br from-blue-500/90 via-gray-700 to-gray-900 flex items-center justify-center min-h-screen text-white">
     <div class="text-center bg-opacity-60 bg-gray-800 p-8 rounded-xl shadow-lg m-8">
         <h1 class="text-4xl font-extrabold mb-4">Welcome to <span class="text-red-500">Lara-Mail</span>!</h1>
         <p class="text-lg mb-6 text-gray-300">
